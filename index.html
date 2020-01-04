@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://use.fontawesome.com/releases/v5.12.0/js/all.js" data-auto-replace-svg></script>
 
 </head>
 
@@ -18,7 +19,7 @@
     <div class="container">
         <!--Header-->
         <div class="mainHeader">
-            <nav class="navbar navbar-light bg-light justify-content-center">
+            <nav class="navbar navbar-light justify-content-center">
                 <span class="navbar-brand mb-0 h1 ">Trip Buddy</span>
             </nav>
         </div>
@@ -31,18 +32,20 @@
 
                         <!--Starting Location Input Row-->
                         <div class="row">
-                            <div class=" col-sm-5">Starting Location
+                            <div class=" col-sm-5">
+                                <p>Starting Location</p>
 
-                                <input type="search" id="startAddress" placeholder="Enter starting location." />
+                                <input type="search" id="startAddress" placeholder="From?" />
                             </div>
 
                             <!--Divider column-->
                             <div class="col-sm-2"></div>
 
                             <!--Destination Input Row-->
-                            <div class="col-sm-5">Destination Location
+                            <div class="col-sm-5">
+                                <p>Destination Location</p>
                                 <!--Destination Input-->
-                                <input type="search" id="endAddress" placeholder="Where are we going?" />
+                                <input type="search" id="endAddress" placeholder="To?" />
                             </div>
 
                         </div>
@@ -83,7 +86,8 @@
 
                         <!--Submit button-->
                         <div class="row justify-content-center">
-                            <button type="button" class="btn btn-primary" id="submitButton">Submit</button>
+                            <button type="button" class="btn btn-primary" id="submitButton"><i
+                                    class="fas fa-search"></i></button>
                         </div>
 
                     </div>
