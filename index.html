@@ -33,7 +33,7 @@
                         <div class="row">
                             <div class=" col-sm-5">Starting Location
 
-                                <input type="search" id="startAddress" placeholder="Where are we going?" />
+                                <input type="search" id="startAddress" placeholder="Enter starting location." />
                             </div>
 
                             <!--Divider column-->
@@ -83,7 +83,7 @@
 
                         <!--Submit button-->
                         <div class="row justify-content-center">
-                            <button type="button" class="btn btn-primary">Submit</button>
+                            <button type="button" class="btn btn-primary" id="submitButton">Submit</button>
                         </div>
 
                     </div>
@@ -93,7 +93,10 @@
 
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/places.js@1.17.1"></script>
+    <script src="script.js"></script>
     <script>
         var startAddress = places({
             appId: 'pl7E3UZTOWW0',
