@@ -1,12 +1,17 @@
+body{
+    background-image: url("https://image.businessinsider.com/5d0150e06fc9200b5a05f042?width=1100&format=jpeg&auto=webp");
+}
+
 p{
     font-size: 20px;
     font-weight: lighter;
-    
     
 }
 
 .mainHeader {
     font-weight: bold;
+    background-color: white;
+    margin-top: 20px;
 
 }
 
@@ -26,7 +31,7 @@ a:hover {background-color: yellow;}
 }
 
 .card {
-    margin-top: 30px;
+    /* margin-top: 30px; */
     height: 350px;
 >>>>>>> aea61ea99e43bfbb2ecd4275bbfdb798f8fea992
 }
