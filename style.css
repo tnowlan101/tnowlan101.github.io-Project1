@@ -1,8 +1,16 @@
-.mainHeader {
-    font-size: 50px;
-    font-weight: bold;
+p{
+    font-size: 20px;
+    font-weight: lighter;
+    
+    
 }
 
+.mainHeader {
+    font-weight: bold;
+
+}
+
+<<<<<<< HEAD
 .card {
     margin-top: 20px;
     height: 400px;
@@ -12,13 +20,27 @@
 a:hover {background-color: yellow;}
 .startLocation {
     margin: 15px 0px 50px 10px;
+=======
+.navbar-brand {
+    font-size: 30px !important;
 }
 
-.destLocation {
-    margin: 15px 15px 20px 0px;
+.card {
+    margin-top: 30px;
+    height: 350px;
+>>>>>>> aea61ea99e43bfbb2ecd4275bbfdb798f8fea992
+}
+
+.form-group {
+    margin-top: 20px;
 }
 
 .btn {
     text-align: center;
+<<<<<<< HEAD
 }
 
+=======
+    margin: 25px;
+}
+>>>>>>> aea61ea99e43bfbb2ecd4275bbfdb798f8fea992
