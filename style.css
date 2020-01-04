@@ -1,0 +1,21 @@
+.mainHeader {
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.card {
+    margin-top: 20px;
+    height: 400px;
+}
+
+.startLocation {
+    margin: 15px 0px 50px 10px;
+}
+
+.destLocation {
+    margin: 15px 15px 20px 0px;
+}
+
+.btn {
+    text-align: center;
+}

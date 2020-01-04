@@ -1,20 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
-
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+
+    <!--CSS Link-->
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
 </head>
 
-
 <body>
+    <div class="container">
+        <!--Header-->
+        <div class="mainHeader">
+            <nav class="navbar navbar-light bg-light justify-content-center">
+                <span class="navbar-brand mb-0 h1 ">Trip Buddy</span>
+            </nav>
+        </div>
 
+        <!--Card Body-->
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card">
+                    <div class="card-body">
+
+                        <!--Starting Location Input Row-->
+                        <div class="row">
+                            <div class=" col-sm-5">Starting Location
+
+                                <input type="search" id="startAddress" placeholder="Where are we going?" />
+                            </div>
+
+                            <!--Divider column-->
+                            <div class="col-sm-2"></div>
+
+                            <!--Destination Input Row-->
+                            <div class="col-sm-5">Destination Location
+                                <!--Destination Input-->
+                                <input type="search" id="endAddress" placeholder="Where are we going?" />
+                            </div>
+
+                        </div>
+
+                        <!--Activity and Restaruant choices-->
+                        <div class="row">
+                            <div class="col-sm-5">
+                                <!--Input for number of activities you want to generate-->
+                                <div class="form-group">
+                                    <label for="exampleFormControlSelect1">Activities</label>
+                                    <select class="form-control" id="exampleFormControlSelect1">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!--Divider column-->
+                            <div class="col-sm-2"></div>
+
+                            <div class="col-sm-5">
+                                <!--Input for number of activities you want to generate-->
+                                <div class="form-group">
+                                    <label for="exampleFormControlSelect1">Restaruant</label>
+                                    <select class="form-control" id="exampleFormControlSelect1">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--Submit button-->
+                        <div class="row justify-content-center">
+                            <button type="button" class="btn btn-primary">Submit</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/places.js@1.17.1"></script>
+    <script>
+        var startAddress = places({
+            appId: 'pl7E3UZTOWW0',
+            apiKey: '6a40a5221c1febca1b1d96bd6ef8e1c4',
+            container: document.querySelector('#startAddress')
+        });
+
+        var endAddress = places({
+            appId: 'pl7E3UZTOWW0',
+            apiKey: '6a40a5221c1febca1b1d96bd6ef8e1c4',
+            container: document.querySelector('#endAddress')
+        });
+    </script>
 </body>
-
 
 </html>
