@@ -6,8 +6,10 @@
 .card {
     margin-top: 20px;
     height: 400px;
-}
+    padding-top: 20px;
 
+}
+a:hover {background-color: yellow;}
 .startLocation {
     margin: 15px 0px 50px 10px;
 }
@@ -19,3 +21,4 @@
 .btn {
     text-align: center;
 }
+
