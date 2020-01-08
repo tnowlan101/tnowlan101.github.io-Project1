@@ -71,7 +71,7 @@ function generateRestaurants() {
 
             var restaurantMediaObject = $('<div class="row"><div class="col"><div class="media"><img src="' + response.businesses[i].image_url + '"> ' +
                 '<div class="media-body"><h5 class="mt-0 businessHeader">' + response.businesses[i].name + '</h5>' +
-                '<p class="businessInfo">Rating: ' + response.businesses[i].rating + '</p>' +
+                '<p class="businessInfo">Rating: ' + response.businesses[i].rating + "/5" + '</p>' +
                 '<p class="businessInfo">Address: ' + restaurantAddress + '</p>' +
                 '<p class="businessInfo">Food Type: ' + foodType + '</p>' +
                 '<p class="businessInfo">Phone Number: ' + response.businesses[i].display_phone + '</p>' +
