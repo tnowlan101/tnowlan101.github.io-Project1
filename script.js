@@ -3,6 +3,19 @@ var endLocation;
 var numOfRestaurants;
 var numOfActivities;
 
+//Create autofill search bars for Start and End destinations using Algolia Places
+var startAddress = places({
+    appId: 'pl7E3UZTOWW0',
+    apiKey: '6a40a5221c1febca1b1d96bd6ef8e1c4',
+    container: document.querySelector('#startAddress')
+});
+
+var endAddress = places({
+    appId: 'pl7E3UZTOWW0',
+    apiKey: '6a40a5221c1febca1b1d96bd6ef8e1c4',
+    container: document.querySelector('#endAddress')
+});
+
 function createMap() {
 
     var mapquestApiKey = "LnKRG2Lq3YrtUP9FxWVGpL57coUhpfWy";
