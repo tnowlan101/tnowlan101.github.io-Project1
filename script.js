@@ -55,6 +55,22 @@ function generateRestaurants() {
 
 
 
+<<<<<<< HEAD
+=======
+            for (var k = 0; k < response.businesses[i].categories.length; k++)
+                foodType += response.businesses[i].categories[k].title + ' ';
+
+
+            var restaurantMediaObject = $('<div class="row"><div class="col"><div class="media"><img src="' + response.businesses[i].image_url + '"> ' +
+                '<div class="media-body"><h5 class="mt-0 businessHeader">' + response.businesses[i].name + '</h5>' +
+                '<p class="businessInfo">Rating: ' + response.businesses[i].rating + '</p>' +
+                '<p class="businessInfo">Address: ' + restaurantAddress + '</p>' +
+                '<p class="businessInfo">Food Type: ' + foodType + '</p>' +
+                '<p class="businessInfo">Phone Number: ' + response.businesses[i].display_phone + '</p>' +
+                '<p class="businessInfo">URL: <a href=' + response.businesses[i].url + '>See ' + response.businesses[i].name + ' on Yelp!</a></p>')
+            $("#restaurants").append(restaurantMediaObject);
+        }
+>>>>>>> c4d331e54b4bdab8c98e0d892628e1dc77e6cbba
     });
 }
 
