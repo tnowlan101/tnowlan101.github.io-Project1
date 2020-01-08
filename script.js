@@ -58,8 +58,8 @@ function generateRestaurants() {
         console.log(response)
 
         for (var i = 0; i < numOfRestaurants; i++) {
-            var restaurantAddress;
-            var foodType;
+            var restaurantAddress = "";
+            var foodType = "";
 
             console.log(response.businesses[i].location.display_address)
             for (var j = 0; j < response.businesses[i].location.display_address.length; j++)
@@ -69,7 +69,7 @@ function generateRestaurants() {
                 foodType += response.businesses[i].categories[k].title + ' ';
 
 
-            var restaurantMediaObject = $('<div class="row"><div class="media"><img src="' + response.businesses[i].image_url + '"> ' +
+            var restaurantMediaObject = $('<div class="row"><div class="col"><div class="media"><img src="' + response.businesses[i].image_url + '"> ' +
                 '<div class="media-body"><h5 class="mt-0">' + response.businesses[i].name + '</h5>' +
                 '<p>Rating: ' + response.businesses[i].rating + '</p>' +
                 '<p>Address: ' + restaurantAddress + '</p>' +
