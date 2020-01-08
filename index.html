@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://use.fontawesome.com/releases/v5.12.0/js/all.js" data-auto-replace-svg></script>
     <link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.css" />
 
 
@@ -20,7 +21,7 @@
     <div class="container">
         <!--Header-->
         <div class="mainHeader">
-            <nav class="navbar navbar-light justify-content-center">
+            <nav class="navbar navbar-light">
                 <span class="navbar-brand mb-0 h1 ">Trip Buddy</span>
             </nav>
         </div>
@@ -35,25 +36,25 @@
                         <div class="row">
                             <div class=" col-sm-5">
                                 <p>Starting Location</p>
-
-                                <input type="search" id="startAddress" placeholder="From?" />
+                                <!--Starting location Input-->
+                                <input type="search" id="startAddress" placeholder="Leaving from?" />
                             </div>
 
                             <!--Divider column-->
-                            <div class="col-sm-2"></div>
+                            <!-- <div class="col-sm-2"></div> -->
 
                             <!--Destination Input Row-->
                             <div class="col-sm-5">
                                 <p>Destination Location</p>
                                 <!--Destination Input-->
-                                <input type="search" id="endAddress" placeholder="To?" />
+                                <input type="search" id="endAddress" placeholder="Going to?" />
                             </div>
 
                         </div>
 
                         <!--Activity and Restaruant choices-->
                         <div class="row">
-                            <div class="col-sm-5">
+                            <div class="col-sm-3">
                                 <!--Input for number of activities you want to generate-->
                                 <div class="form-group">
                                     <label for="exampleFormControlSelect1">Activities</label>
@@ -68,12 +69,12 @@
                             </div>
 
                             <!--Divider column-->
-                            <div class="col-sm-2"></div>
+                            <!-- <div class="col-sm-2"></div> -->
 
-                            <div class="col-sm-5">
+                            <div class="col-sm-3">
                                 <!--Input for number of activities you want to generate-->
                                 <div class="form-group">
-                                    <label for="exampleFormControlSelect1">Restaruant</label>
+                                    <label for="exampleFormControlSelect1">Restaruants</label>
                                     <select class="form-control" id="exampleFormControlSelect1">
                                         <option>1</option>
                                         <option>2</option>
@@ -86,14 +87,24 @@
                         </div>
 
                         <!--Submit button-->
+<<<<<<< HEAD
                         <div class="row justify-content-center">
                             <button type="button" class="btn btn-primary" id="submitButton">Adventure Starts here!<i
                                     class="fas fa-search"></i></button>
+=======
+                        <div class="row">
+                            <button type="button" class="btn btn-primary" id="submitButton">Search</i></button>
+>>>>>>> a001c9636c56639896dd355971fb29ba32ef6df6
                         </div>
 
                     </div>
                 </div>
             </div>
+        </div>
+
+        <div class="row" id="results">
+            <div class="col-sm-6" id="restaurants"></div>
+            <div class="col-sm-6" id="activities"></div>
         </div>
 
     </div>
