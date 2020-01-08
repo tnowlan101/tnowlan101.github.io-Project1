@@ -42,7 +42,19 @@ function createMap() {
 }
 
 function generateActivies() {
+    var yelpApiKey = "EKNdAx27IgYINE6TiVp9FhPB0Me3YrNSH44mLYiaKUp2XIvAVjBurD74d9e_GkjQtx_l2APPcgH3ZWEEDe7QMTL8iOqXmyShjPDdqEdSWiGa49JDB-Op7pTBeQIUXnYx";
 
+    //categories: active life, arts & entertainment, hotels&travel (tours, camp grounds), public services(land marks)
+    //     $.ajax({
+    //         url: "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=" + endLocation + "&sort_by=rating&categories=<CATEGORIES>&radius=25000",
+    //         headers: {
+    //             'Authorization': 'Bearer ' + yelpApiKey,
+    //         },
+    //         method: "GET"
+    //     }).then(function (response) {
+
+    //     });
+    // }
 }
 
 function generateRestaurants() {
@@ -71,7 +83,7 @@ function generateRestaurants() {
 
             var restaurantMediaObject = $('<div class="row"><div class="col"><div class="media"><img src="' + response.businesses[i].image_url + '"> ' +
                 '<div class="media-body"><h5 class="mt-0 businessHeader">' + response.businesses[i].name + '</h5>' +
-                '<p class="businessInfo">Rating: ' + response.businesses[i].rating + "/5" + '</p>' +
+                '<p class="businessInfo">Rating: ' + response.businesses[i].rating + '/5</p>' +
                 '<p class="businessInfo">Address: ' + restaurantAddress + '</p>' +
                 '<p class="businessInfo">Food Type: ' + foodType + '</p>' +
                 '<p class="businessInfo">Phone Number: ' + response.businesses[i].display_phone + '</p>' +
