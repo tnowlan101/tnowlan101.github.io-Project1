@@ -55,57 +55,58 @@ function generateActivies() {
 
     //     });
     // }
+}
 
-    function generateRestaurants() {
-        var yelpApiKey = "EKNdAx27IgYINE6TiVp9FhPB0Me3YrNSH44mLYiaKUp2XIvAVjBurD74d9e_GkjQtx_l2APPcgH3ZWEEDe7QMTL8iOqXmyShjPDdqEdSWiGa49JDB-Op7pTBeQIUXnYx";
+function generateRestaurants() {
+    var yelpApiKey = "EKNdAx27IgYINE6TiVp9FhPB0Me3YrNSH44mLYiaKUp2XIvAVjBurD74d9e_GkjQtx_l2APPcgH3ZWEEDe7QMTL8iOqXmyShjPDdqEdSWiGa49JDB-Op7pTBeQIUXnYx";
 
-        $.ajax({
-            url: "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=" + endLocation + "&sort_by=rating&categories=food&radius=25000",
-            headers: {
-                'Authorization': 'Bearer ' + yelpApiKey,
-            },
-            method: "GET"
-        }).then(function (response) {
-            console.log(response)
+    $.ajax({
+        url: "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=" + endLocation + "&sort_by=rating&categories=food&radius=25000",
+        headers: {
+            'Authorization': 'Bearer ' + yelpApiKey,
+        },
+        method: "GET"
+    }).then(function (response) {
+        console.log(response)
 
-            for (var i = 0; i < numOfRestaurants; i++) {
-                var restaurantAddress = "";
-                var foodType = "";
+        for (var i = 0; i < numOfRestaurants; i++) {
+            var restaurantAddress = "";
+            var foodType = "";
 
-                console.log(response.businesses[i].location.display_address)
-                for (var j = 0; j < response.businesses[i].location.display_address.length; j++)
-                    restaurantAddress += response.businesses[i].location.display_address[j] + ' ';
+            console.log(response.businesses[i].location.display_address)
+            for (var j = 0; j < response.businesses[i].location.display_address.length; j++)
+                restaurantAddress += response.businesses[i].location.display_address[j] + ' ';
 
-                for (var k = 0; k < response.businesses[i].categories.length; k++)
-                    foodType += response.businesses[i].categories[k].title + ' ';
+            for (var k = 0; k < response.businesses[i].categories.length; k++)
+                foodType += response.businesses[i].categories[k].title + ' ';
 
 
-                var restaurantMediaObject = $('<div class="row"><div class="col"><div class="media"><img src="' + response.businesses[i].image_url + '"> ' +
-                    '<div class="media-body"><h5 class="mt-0 businessHeader">' + response.businesses[i].name + '</h5>' +
-                    '<p class="businessInfo">Rating: ' + response.businesses[i].rating + '</p>' +
-                    '<p class="businessInfo">Address: ' + restaurantAddress + '</p>' +
-                    '<p class="businessInfo">Food Type: ' + foodType + '</p>' +
-                    '<p class="businessInfo">Phone Number: ' + response.businesses[i].display_phone + '</p>' +
-                    '<p class="businessInfo">URL: <a href=' + response.businesses[i].url + '>See ' + response.businesses[i].name + ' on Yelp!</a></p>')
-                $("#restaurants").append(restaurantMediaObject);
-            }
-        });
-    }
+            var restaurantMediaObject = $('<div class="row"><div class="col"><div class="media"><img src="' + response.businesses[i].image_url + '"> ' +
+                '<div class="media-body"><h5 class="mt-0 businessHeader">' + response.businesses[i].name + '</h5>' +
+                '<p class="businessInfo">Rating: ' + response.businesses[i].rating + '/5</p>' +
+                '<p class="businessInfo">Address: ' + restaurantAddress + '</p>' +
+                '<p class="businessInfo">Food Type: ' + foodType + '</p>' +
+                '<p class="businessInfo">Phone Number: ' + response.businesses[i].display_phone + '</p>' +
+                '<p class="businessInfo">URL: <a href=' + response.businesses[i].url + '>See ' + response.businesses[i].name + ' on Yelp!</a></p>')
+            $("#restaurants").append(restaurantMediaObject);
+        }
+    });
+}
 
-    $("#submitButton").on("click", function () {
+$("#submitButton").on("click", function () {
 
-        startLocation = $("#startAddress").val();
-        endLocation = $("#endAddress").val();
-        numOfRestaurants = $("#numRestaurants").val();
-        numOfActivities = $("#numActivities").val();
+    startLocation = $("#startAddress").val();
+    endLocation = $("#endAddress").val();
+    numOfRestaurants = $("#numRestaurants").val();
+    numOfActivities = $("#numActivities").val();
 
-        $("#restaurants").empty();
-        $("#activities").empty();
+    $("#restaurants").empty();
+    $("#activities").empty();
 
-        //createMap();
-        generateRestaurants();
+    //createMap();
+    generateRestaurants();
 
-    })
+})
 
 
 
