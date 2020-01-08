@@ -2,6 +2,8 @@ body{
     background-image: url("https://steamuserimages-a.akamaihd.net/ugc/156901025169962305/7E4EE0CD182A4B3A67F344BDF9E041243D211116/");
     background-size: cover;
     background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
 }
 
 p{
