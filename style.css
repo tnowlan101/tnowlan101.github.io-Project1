@@ -1,5 +1,6 @@
 body{
     background-image: url("https://image.businessinsider.com/5d0150e06fc9200b5a05f042?width=1100&format=jpeg&auto=webp");
+    background-size: cover;
 }
 
 p{
@@ -9,9 +10,11 @@ p{
 }
 
 .mainHeader {
+    font-family: 'Trebuchet MS';
     font-weight: bold;
     background-color: white;
     margin-top: 20px;
+    
 
 }
 
@@ -21,7 +24,10 @@ p{
 
 .card {
     /* margin-top: 30px; */
-    height: 350px;
+    height: 400px;
+    opacity: 0.75;
+    background-color: grey !important;
+    
 }
 
 .form-group {
