@@ -32,17 +32,13 @@ function createMap() {
         layers: L.mapquest.tileLayer('map'),
         zoom: 12
     });
-
+    
     L.mapquest.geocoding().geocode(startLocation);
     L.mapquest.directions().route({
         start: startLocation,
         end: endLocation
     });
     //map.addControl(L.mapquest.control());
-}
-
-function generateActivies() {
-
 }
 
 function generateRestaurants() {
@@ -57,29 +53,8 @@ function generateRestaurants() {
     }).then(function (response) {
         console.log(response)
 
-        for (var i = 0; i < numOfRestaurants; i++) {
-            var restaurantAddress = "";
-            var foodType = "";
-
-            console.log(response.businesses[i].location.display_address)
-            for (var j = 0; j < response.businesses[i].location.display_address.length; j++)
-                restaurantAddress += response.businesses[i].location.display_address[j] + ' ';
-
-            for (var k = 0; k < response.businesses[i].categories.length; k++)
-                foodType += response.businesses[i].categories[k].title + ' ';
 
 
-            var restaurantMediaObject = $('<div class="row"><div class="col"><div class="media"><img src="' + response.businesses[i].image_url + '"> ' +
-                '<div class="media-body"><h5 class="mt-0">' + response.businesses[i].name + '</h5>' +
-                '<p>Rating: ' + response.businesses[i].rating + '</p>' +
-                '<p>Address: ' + restaurantAddress + '</p>' +
-                '<p>Food Type: ' + foodType + '</p>' +
-                '<p>Phone Number: ' + response.businesses[i].display_phone + '</p>' +
-                '<p>URL: <a href=' + response.businesses[i].url + '>See ' + response.businesses[i].name + ' on Yelp!</a></p>')
-        }
-
-        console.log(restaurantMediaObject);
-        $("#restaurants").append(restaurantMediaObject);
     });
 }
 
@@ -90,10 +65,8 @@ $("#submitButton").on("click", function () {
     numOfRestaurants = $("#numRestaurants").val();
     numOfActivities = $("#numActivities").val();
 
-    $("#restaurants").empty();
-    $("#activities").empty();
-
-    //createMap();
+    console.log(numOfActivities + ' ' + numOfRestaurants)
+    createMap();
     generateRestaurants();
 
 })
