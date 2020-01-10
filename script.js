@@ -39,6 +39,8 @@ function createMap() {
         start: startLocation,
         end: endLocation
     });
+
+    $("#directions").append($('<a href="directions.html" target="_blank">Click here for list of directions!</a>'))
     //map.addControl(L.mapquest.control());
 }
 
