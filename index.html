@@ -34,14 +34,15 @@
                     <div class="card-body">
 
                         <!--Starting Location Input Row-->
-                      
                         <div class="row">
                             <div class=" col-sm-5">
                                 <p>Starting Location</p>
                                 <!--Starting location Input-->
-                                <input type="search" id="startAddress" placeholder="Leaving from?" />
+                                <form id="validate_form">
+                                    <div class="form-group">
+                                <input type="search" id="startAddress" placeholder="Leaving from?" class="form-control" required=""/>
                             </div>
-
+                        </div>
                             <!--Divider column-->
                             <!-- <div class="col-sm-2"></div> -->
 
@@ -49,11 +50,12 @@
                             <div class="col-sm-5">
                                 <p>Destination Location</p>
                                 <!--Destination Input-->
-                                <input type="search" id="endAddress" placeholder="Going to?" />
+                                <div class="form-group">
+                                <input type="search" id="endAddress" placeholder="Going to?" class="form-control" required/>
                             </div>
-
+                          </div>
                         </div>
-
+                    </form>
                         <!--Activity and Restaruant choices-->
                         <div class="row">
                             <div class="col-sm-3">
@@ -96,7 +98,7 @@
                         <div class="row">
                             <button type="button" class="btn btn-primary" id="submitButton">Search</i></button>
                         </div>
-                     
+                       </form>
 
                     </div>
                 </div>
@@ -116,7 +118,7 @@
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/places.js@1.17.1"></script>
     <script src="script.js"></script>
-    <script src="jquery-1.12.4-jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery.js"></script>
     <script src="assets/parsley.min.js"></script>
 </body>
 
