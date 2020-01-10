@@ -42,7 +42,7 @@ function createMap() {
     //map.addControl(L.mapquest.control());
 }
 
-function generateActivies() {
+function generateActivities() {
     var yelpApiKey = "EKNdAx27IgYINE6TiVp9FhPB0Me3YrNSH44mLYiaKUp2XIvAVjBurD74d9e_GkjQtx_l2APPcgH3ZWEEDe7QMTL8iOqXmyShjPDdqEdSWiGa49JDB-Op7pTBeQIUXnYx";
 
     //categories: active life, arts & entertainment, hotels&travel (tours, camp grounds), public services(land marks)
@@ -191,8 +191,9 @@ $("#submitButton").on("click", function () {
 
     createMap();
     generateRestaurants();
-    generateActivies();
+    generateActivities();
     generateForecast();
+
 })
 
 
