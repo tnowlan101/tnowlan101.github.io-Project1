@@ -1,9 +1,7 @@
 body{
-    background-image: url("https://steamuserimages-a.akamaihd.net/ugc/156901025169962305/7E4EE0CD182A4B3A67F344BDF9E041243D211116/");
+    background-image: url("https://cdn.shopify.com/s/files/1/0011/6208/4407/products/Art_3079_2000x.jpg?v=1566392227");
     background-size: cover;
     background-repeat: no-repeat;
-    height: 100%;
-    width: 100%;
 }
 
 p{
@@ -18,11 +16,13 @@ label {
 }
 
 .mainHeader {
-    font-family: 'Trebuchet MS';
+    /* font-family: 'Cookie', cursive;
+    font-family: 'Sonsie One', cursive; */
+    font-family: 'Pacifico', cursive;
+    /* font-family: 'Trebuchet MS'; */
     font-weight: bold;
     background-color: rgb(255, 217, 1);
     font: black;
-    /* margin-top: 20px; */
     
 }
 
@@ -64,6 +64,7 @@ img {
     border: 1px solid grey;
     margin-top: 10px;
     border-radius: 10px;
+    height: 275px;
 }
 
 .businessHeader{
