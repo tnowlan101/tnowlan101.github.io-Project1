@@ -195,6 +195,3 @@ $("#submitButton").on("click", function () {
     generateForecast();
 
 })
-
-
-
