@@ -30,7 +30,6 @@ label {
 .card {
     margin-top: 30px;
     background-color: rgb(126, 123, 123, 0.75) !important;
-    /* height: 400px; */
     
 }
 
@@ -44,7 +43,6 @@ label {
     background-color: rgb(255, 217, 1);
     border: solid 1px rgb(49, 48, 48, 0.75);
     color: black;
-    
 }
 
 img {
