@@ -42,7 +42,7 @@ function createMap() {
     //map.addControl(L.mapquest.control());
 }
 
-function generateActivies() {
+function generateActivities() {
     var yelpApiKey = "EKNdAx27IgYINE6TiVp9FhPB0Me3YrNSH44mLYiaKUp2XIvAVjBurD74d9e_GkjQtx_l2APPcgH3ZWEEDe7QMTL8iOqXmyShjPDdqEdSWiGa49JDB-Op7pTBeQIUXnYx";
 
     //categories: active life, arts & entertainment, hotels&travel (tours, camp grounds), public services(land marks)
@@ -136,6 +136,45 @@ function generateRestaurants() {
     });
 }
 
+function generateForecast() {
+
+    var weatherKey = "&units=imperial&APPID=3f57d1d0ccb27e3179f39171730967ec";
+    forecastURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + endLocation + weatherKey;
+
+    $.ajax({
+        url: forecastURL,
+        method: "GET"
+    }).then(function (response) {
+        console.log(response)
+
+        $('#forecastHead').append($('<h3> 5-Day Forecast for ' + endLocation + ' </h3>'))
+
+        // This for loop gets the 5-day forecast data after the API call
+        for (i = 5; i <= response.list.length; i += 8) {
+            console.log(i)
+
+            var unformattedNewDay = response.list[i].dt_txt.split(" ")[0];
+            var dateArray = unformattedNewDay.split("-")
+            var newDay = dateArray[1] + "/" + dateArray[2] + "/" + dateArray[0];
+
+            var iconForecast = response.list[i].weather[0].icon;
+            var iconImgURL = "http://openweathermap.org/img/w/" + iconForecast + ".png";
+            var tempForecast = Math.round(response.list[i].main.temp);
+            var humidityForecast = response.list[i].main.humidity;
+
+            $("#forecast")
+                .append($("<div>").addClass("col-sm-2 days")
+                    .append($("<p class='forecastData'>").html(newDay))
+                    .append($("<img id='forecastImg' src=" + iconImgURL + ">"))
+                    .append($("<p class='forecastData'>").html("Temp: " + tempForecast + " °F"))
+                    .append($("<p class='forecastData'>").html("Humidity: " + humidityForecast + "%")))
+
+        }
+
+    });
+
+}
+
 $("#submitButton").on("click", function () {
 
     startLocation = $("#startAddress").val();
@@ -143,6 +182,7 @@ $("#submitButton").on("click", function () {
     numOfRestaurants = $("#numRestaurants").val();
     numOfActivities = $("#numActivities").val();
 
+<<<<<<< HEAD
     console.log(numOfActivities + ' ' + numOfRestaurants)
     createMap();
     generateRestaurants();
@@ -192,3 +232,18 @@ $(function () {
 
   
  
+=======
+    $("#restaurants").empty();
+    $("#activities").empty();
+    $("#forecastHead").empty();
+    $("#forecast").empty();
+    $("body").css({ 'background-image': 'url("")', 'background-color': 'rgb(250, 247, 247)' });
+    $(".card").css({ 'height': '400px' });
+
+    createMap();
+    generateRestaurants();
+    generateActivities();
+    generateForecast();
+
+})
+>>>>>>> a27b71152ed488bbdcbd4dc34d680940166c6504

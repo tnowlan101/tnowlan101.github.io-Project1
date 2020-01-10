@@ -32,8 +32,8 @@ label {
 
 .card {
     margin-top: 30px;
-    height: 400px;
     background-color: rgb(126, 123, 123, 0.75) !important;
+    /* height: 400px; */
     
 }
 
@@ -61,10 +61,8 @@ img {
 
 .media {
     background-color: white;
-    border: 1px solid grey;
-    margin-top: 10px;
+    border: 1px solid rgb(211, 209, 209);
     border-radius: 10px;
-    height: 275px;
 }
 
 .businessHeader{
@@ -81,3 +79,35 @@ img {
     margin-left: 10px;
     padding-left: 3px;
 }
+<<<<<<< HEAD
+=======
+
+#forecastHead {
+    padding: 5px;
+}
+
+#forecast {
+font-size: 15px;
+margin-right: 10px;
+margin-top: 15px !important;
+margin-bottom: 15px !important;
+}
+
+.forecastData {
+    color: black;
+    margin: 0;
+    padding: 5px;
+}
+
+.days {
+    border: 1px rgb(211, 209, 209) solid;
+    background-color: white;
+    border-radius: 10px;
+    margin-right: 15px;
+}
+
+#forecastImg {
+    height: 75px;
+    width: 75px;
+}
+>>>>>>> a27b71152ed488bbdcbd4dc34d680940166c6504
