@@ -60,6 +60,8 @@ function generateActivities() {
 
         console.log(response);
 
+        $("#activities").append("<h3 class='pl-2'>Top Activities</h3>");
+
         //Populate list of activies with a media object card for each activity
         for (var i = 0; i < numOfActivities; i++) {
             var activityAddress = "";
@@ -105,6 +107,8 @@ function generateRestaurants() {
     }).then(function (response) {
 
         console.log(response)
+
+        $("#restaurants").append("<h3 class='pl-2'>Top Restaurants</h3>");
 
         //Populate list of restaurants with a media object card for each restaurant
         for (var i = 0; i < numOfRestaurants; i++) {
