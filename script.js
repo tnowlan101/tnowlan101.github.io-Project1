@@ -55,8 +55,6 @@ function generateRestaurants() {
 
 
 
-<<<<<<< HEAD
-=======
             for (var k = 0; k < response.businesses[i].categories.length; k++)
                 foodType += response.businesses[i].categories[k].title + ' ';
 
@@ -70,7 +68,6 @@ function generateRestaurants() {
                 '<p class="businessInfo">URL: <a href=' + response.businesses[i].url + '>See ' + response.businesses[i].name + ' on Yelp!</a></p>')
             $("#restaurants").append(restaurantMediaObject);
         }
->>>>>>> c4d331e54b4bdab8c98e0d892628e1dc77e6cbba
     });
 }
 
