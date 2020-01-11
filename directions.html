@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Directions</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <style>
+        img {
+            height: 20px;
+            width: 20px;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container" id="directionsContainer">
+        <div class="row">
+            <h4></h4>
+        </div>
+        <div class="row">
+            <h6></h6>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+    <script>
+
+        startLocation = localStorage.getItem("startLocation");
+        endLocation = localStorage.getItem("endLocation");
+
+        $("h4").text("Directions from " + startLocation + " to " + endLocation);
+        $("h6").text("Powered by Mapquest!")
+
+
+        $.ajax({
+            url: "http://www.mapquestapi.com/directions/v2/route?key=" + mapquestApiKey + "&from=" + startLocation + "&to=" + endLocation,
+            method: "GET"
+        }).then(function (response) {
+
+            $("#directionsContainer").append($("<div class='row'><p>Total Distance: " + response.route.distance.toFixed(2) + " miles.</p></div>"))
+
+            for (var i = 0; i < response.route.legs[0].maneuvers.length; i++) {
+                if (i + 1 == response.route.legs[0].maneuvers.length) {
+                    var directionStep = $("<div class='row'><img src='" + response.route.legs[0].maneuvers[i].iconUrl + "'> <p> " +
+                        response.route.legs[0].maneuvers[i].narrative + "</p></div>");
+
+                    $("#directionsContainer").append(directionStep);
+                }
+                else {
+                    var directionStep = $("<div class='row'><img src='" + response.route.legs[0].maneuvers[i].iconUrl + "'> <p> " +
+                        response.route.legs[0].maneuvers[i].narrative + "</p></div>");
+                    var distance = $("<div class='row'>--After " + response.route.legs[0].maneuvers[i].distance.toFixed(2) + " miles--</div>");
+
+                    $("#directionsContainer").append(directionStep, distance);
+                }
+
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -16,8 +16,6 @@
     <link rel="stylesheet" href="assets/parsley.css">
 
     <!--Google font style links-->
-    <link href="https://fonts.googleapis.com/css?family=Cookie&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Sonsie+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
 
     
@@ -50,9 +48,6 @@
                                 <input type="search" id="startAddress" class="form-control" placeholder="Leaving from?" data-parsley-required/>
                             </div>
 
-                            <!--Divider column-->
-                            <!-- <div class="col-sm-2"></div> -->
-
                             <!--Destination Input Row-->
                             <div class="col-sm-5 form-group">
                                 <p>Destination Location</p>
@@ -80,9 +75,6 @@
                                 </div>
                             </div>
 
-                            <!--Divider column-->
-                            <!-- <div class="col-sm-2"></div> -->
-
                             <div class="col-sm-3">
                                 <!--Input for number of activities you want to generate-->
                                 <div class="form-group">
@@ -109,10 +101,13 @@
                 </div>
             </div>
         </div>
-   
+
+        <div class="row m-0" id="directions"></div>
+
         <div class="row m-1" id="forecastHead"></div>
         <div class="row m-0 justify-content-center" id="forecast"></div>
 
+        <!--Search Results-->
         <div class="row" id="results">
             <div class="col-sm-6" id="restaurants"></div>
             <div class="col-sm-6" id="activities"></div>
@@ -125,7 +120,19 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/places.js@1.17.1"></script>
-    <script src="assets/parsley.min.js"></script>
+    <script>
+        var startAddress = places({
+            appId: 'pl7E3UZTOWW0',
+            apiKey: '6a40a5221c1febca1b1d96bd6ef8e1c4',
+            container: document.querySelector('#startAddress')
+        });
+
+        var endAddress = places({
+            appId: 'pl7E3UZTOWW0',
+            apiKey: '6a40a5221c1febca1b1d96bd6ef8e1c4',
+            container: document.querySelector('#endAddress')
+        });
+    </script>
     <script src="script.js"></script>
 
 

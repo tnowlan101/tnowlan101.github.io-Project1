@@ -2,23 +2,10 @@ var startLocation;
 var endLocation;
 var numOfRestaurants;
 var numOfActivities;
-$('#form').parsley();
-//Create autofill search bars for Start and End destinations using Algolia Places
-var startAddress = places({
-    appId: 'pl7E3UZTOWW0',
-    apiKey: '6a40a5221c1febca1b1d96bd6ef8e1c4',
-    container: document.querySelector('#startAddress')
-});
 
-var endAddress = places({
-    appId: 'pl7E3UZTOWW0',
-    apiKey: '6a40a5221c1febca1b1d96bd6ef8e1c4',
-    container: document.querySelector('#endAddress')
-});
+var mapquestApiKey = "LnKRG2Lq3YrtUP9FxWVGpL57coUhpfWy";
 
 function createMap() {
-
-    var mapquestApiKey = "LnKRG2Lq3YrtUP9FxWVGpL57coUhpfWy";
 
     //Uses the Mapquest.js library to create an interactive map with a route from starting location to end location
     $(".card").empty();
@@ -40,6 +27,8 @@ function createMap() {
         end: endLocation
     });
     //map.addControl(L.mapquest.control());
+
+    $("#directions").append($('<a href="directions.html" target="_blank">Click here for list of directions!</a>'));
 }
 
 function generateActivities() {
@@ -185,6 +174,9 @@ $("#submitButton").on("click", function () {
     endLocation = $("#endAddress").val();
     numOfRestaurants = $("#numRestaurants").val();
     numOfActivities = $("#numActivities").val();
+
+    localStorage.setItem("startLocation", startLocation);
+    localStorage.setItem("endLocation", endLocation);
 
     $("#restaurants").empty();
     $("#activities").empty();
