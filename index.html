@@ -8,17 +8,19 @@
     <title>Trip Buddy</title>
 
     <!--CSS and Style Link-->
-    <link rel="stylesheet" href="assets/parsley.css" type="text/css">
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script src="https://use.fontawesome.com/releases/v5.12.0/js/all.js" data-auto-replace-svg></script>
     <link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.css" />
+    <link rel="stylesheet" href="assets/parsley.css">
 
     <!--Google font style links-->
     <link href="https://fonts.googleapis.com/css?family=Cookie&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Sonsie+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
+
+    
 
 
 </head>
@@ -31,38 +33,35 @@
         </nav>
     </div>
 
-    
     <div class="container">
         <!--Card Body-->
         <div class="row">
             <div class="col-sm-12">
-               
+                <form id="form1" data-parsley-validate>
                 <div class="card">
                     <div class="card-body">
 
                         <!--Starting Location Input Row-->
-                        <form id="demo-form" data-parsley-validate="">
+
                         <div class="row">
-                            <div class=" col-sm-5">
+                            <div class=" col-sm-5 form-group" >
                                 <p>Starting Location</p>
                                 <!--Starting location Input-->
-                                <form id="validate_form">
-                                    <div class="form-group">
-                                <input type="search" id="startAddress" class="form-control" placeholder="Leaving from?" required=""/>
+                                <input type="search" id="startAddress" class="form-control" placeholder="Leaving from?" data-parsley-required/>
                             </div>
-                        </div>
+
                             <!--Divider column-->
                             <!-- <div class="col-sm-2"></div> -->
 
                             <!--Destination Input Row-->
-                            <div class="col-sm-5">
+                            <div class="col-sm-5 form-group">
                                 <p>Destination Location</p>
                                 <!--Destination Input-->
-                                <div class="form-group">
-                                <input type="search" id="endAddress" class="form-control" placeholder="Going to?" required=""/>
+                                <input type="search" id="endAddress" class="form-control"  placeholder="Going to?" data-parsley-required/>
                             </div>
-                          </div>
+
                         </div>
+
                         <!--Activity and Restaruant choices-->
                         <div class="row">
                             <div class="col-sm-3">
@@ -71,7 +70,7 @@
                                     <label for="exampleFormControlSelect1">
                                         <p>Restaurants</p>
                                     </label>
-                                    <select class="form-control" id="numRestaurants">
+                                    <select class="form-control" id="numRestaurants" data-parsley-required>
                                         <option>1</option>
                                         <option>2</option>
                                         <option>3</option>
@@ -90,7 +89,7 @@
                                     <label for="exampleFormControlSelect1">
                                         <p>Activities</p>
                                     </label>
-                                    <select class="form-control" id="numActivities">
+                                    <select class="form-control"id="numActivities" data-parsley-required>
                                         <option>1</option>
                                         <option>2</option>
                                         <option>3</option>
@@ -100,18 +99,17 @@
                                 </div>
                             </div>
                         </div>
-                    </form>
+
                         <!--Submit button-->
-                        <div class="row">
-                            <button type="button" class="btn btn-primary" id="submitButton" value="validate">Search</i></button>
+                        <div class="row invalid-form-error-message">
+                            <button type="submit" class="btn btn-primary validate" id="submitButton">Search</i></button>
                         </div>
-                       </form>
 
                     </div>
                 </div>
             </div>
         </div>
-
+   
         <div class="row m-1" id="forecastHead"></div>
         <div class="row m-0 justify-content-center" id="forecast"></div>
 
@@ -121,17 +119,17 @@
         </div>
 
     </div>
+</form>
     
-
+    <script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="assets/parsley.min.js"></script>
-    <script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/places.js@1.17.1"></script>
+    <script src="assets/parsley.min.js"></script>
     <script src="script.js"></script>
 
 
-</body>
 
+</body>
 
 </html>

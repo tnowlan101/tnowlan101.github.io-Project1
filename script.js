@@ -2,7 +2,7 @@ var startLocation;
 var endLocation;
 var numOfRestaurants;
 var numOfActivities;
-
+$('#form').parsley();
 //Create autofill search bars for Start and End destinations using Algolia Places
 var startAddress = places({
     appId: 'pl7E3UZTOWW0',
@@ -180,63 +180,12 @@ function generateForecast() {
 }
 
 $("#submitButton").on("click", function () {
-
+    $("#form1").valid();
     startLocation = $("#startAddress").val();
     endLocation = $("#endAddress").val();
     numOfRestaurants = $("#numRestaurants").val();
     numOfActivities = $("#numActivities").val();
 
-<<<<<<< HEAD
-    console.log(numOfActivities + ' ' + numOfRestaurants)
-    createMap();
-    generateRestaurants();
-    generateActivies();
-})
-$(function () {
-    var $sections = $('.form-section');
-  
-    function navigateTo(index) {
-      // Mark the current section with the class 'current'
-      $sections
-        .removeClass('current')
-        .eq(index)
-          .addClass('current');
-      // Show only the navigation buttons that make sense for the current section:
-      $('.form-navigation .previous').toggle(index > 0);
-      var atTheEnd = index >= $sections.length - 1;
-      $('.form-navigation .next').toggle(!atTheEnd);
-      $('.form-navigation [type=submit]').toggle(atTheEnd);
-    }
-  
-    function curIndex() {
-      // Return the current index by looking at which section has the class 'current'
-      return $sections.index($sections.filter('.current'));
-    }
-  
-    // Previous button is easy, just go back
-    $('.form-navigation .previous').click(function() {
-      navigateTo(curIndex() - 1);
-    });
-  
-    // Next button goes forward iff current block validates
-    $('.form-navigation .next').click(function() {
-      $('.demo-form').parsley().whenValidate({
-        group: 'block-' + curIndex()
-      }).done(function() {
-        navigateTo(curIndex() + 1);
-      });
-    });
-  
-    // Prepare sections by setting the `data-parsley-group` attribute to 'block-0', 'block-1', etc.
-    $sections.each(function(index, section) {
-      $(section).find(':input').attr('data-parsley-group', 'block-' + index);
-    });
-    navigateTo(0); // Start at the beginning
-  });
-
-  
- 
-=======
     $("#restaurants").empty();
     $("#activities").empty();
     $("#forecastHead").empty();
@@ -250,4 +199,3 @@ $(function () {
     generateForecast();
 
 })
->>>>>>> a27b71152ed488bbdcbd4dc34d680940166c6504
