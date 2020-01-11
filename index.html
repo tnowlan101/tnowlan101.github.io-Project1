@@ -13,9 +13,12 @@
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script src="https://use.fontawesome.com/releases/v5.12.0/js/all.js" data-auto-replace-svg></script>
     <link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.css" />
+    <link rel="stylesheet" href="assets/parsley.css">
 
     <!--Google font style links-->
     <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
+
+
 
 
 </head>
@@ -32,76 +35,73 @@
         <!--Card Body-->
         <div class="row">
             <div class="col-sm-12">
-                <div class="card">
-                    <div class="card-body">
+                <form id="form1" data-parsley-validate>
+                    <div class="card">
+                        <div class="card-body">
 
-                        <!--Starting Location Input Row-->
-                        <div class="row">
-                            <div class=" col-sm-5">
-                                <p>Starting Location</p>
-                                <!--Starting location Input-->
-                                <input type="search" id="startAddress" placeholder="Leaving from?" />
+                            <!--Starting Location Input Row-->
+
+                            <div class="row">
+                                <div class=" col-sm-5 form-group">
+                                    <p>Starting Location</p>
+                                    <!--Starting location Input-->
+                                    <input type="search" id="startAddress" class="form-control"
+                                        placeholder="Leaving from?" data-parsley-required />
+                                </div>
+
+                                <!--Destination Input Row-->
+                                <div class="col-sm-5 form-group">
+                                    <p>Destination Location</p>
+                                    <!--Destination Input-->
+                                    <input type="search" id="endAddress" class="form-control" placeholder="Going to?"
+                                        data-parsley-required />
+                                </div>
+
                             </div>
 
-                            <!--Destination Input Row-->
-                            <div class="col-sm-5">
-                                <p>Destination Location</p>
-                                <!--Destination Input-->
-                                <input type="search" id="endAddress" placeholder="Going to?" />
-                            </div>
+                            <!--Activity and Restaruant choices-->
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <!--Input for number of restaurants you want to generate-->
+                                    <div class="form-group">
+                                        <label for="exampleFormControlSelect1">
+                                            <p>Restaurants</p>
+                                        </label>
+                                        <select class="form-control" id="numRestaurants" data-parsley-required>
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                        </select>
+                                    </div>
+                                </div>
 
-                        </div>
-
-                        <!--Activity and Restaruant choices-->
-                        <div class="row">
-                            <div class="col-sm-3">
-                                <!--Input for number of restaurants you want to generate-->
-                                <div class="form-group">
-                                    <label for="exampleFormControlSelect1">
-                                        <p>Restaurants</p>
-                                    </label>
-                                    <select class="form-control" id="numRestaurants">
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                    </select>
+                                <div class="col-sm-3">
+                                    <!--Input for number of activities you want to generate-->
+                                    <div class="form-group">
+                                        <label for="exampleFormControlSelect1">
+                                            <p>Activities</p>
+                                        </label>
+                                        <select class="form-control" id="numActivities" data-parsley-required>
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                        </select>
+                                    </div>
                                 </div>
                             </div>
 
-                            <div class="col-sm-3">
-                                <!--Input for number of activities you want to generate-->
-                                <div class="form-group">
-                                    <label for="exampleFormControlSelect1">
-                                        <p>Activities</p>
-                                    </label>
-                                    <select class="form-control" id="numActivities">
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                    </select>
-                                </div>
+                            <!--Submit button-->
+                            <div class="row invalid-form-error-message">
+                                <button type="submit" class="btn btn-primary validate"
+                                    id="submitButton">Search</i></button>
                             </div>
-                        </div>
 
-                        <!--Submit button-->
-                        <div class="row">
-                            <button type="button" class="btn btn-primary" id="submitButton">Search</i></button>
                         </div>
-
-                        <div id="myModal" class="modal">
-                            <div class="modal-content">
-                                <span class="close">&times;</span>
-                                <p>There was an error getting your directions. Keep in mind this current build cannot
-                                    get directions for overseas travel. Sorry!</p>
-                            </div>
-                        </div>
-
                     </div>
-                </div>
             </div>
         </div>
 
@@ -117,7 +117,7 @@
         </div>
 
     </div>
-
+    </form>
 
     <script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
@@ -137,6 +137,7 @@
         });
     </script>
     <script src="script.js"></script>
+
 
 
 </body>
