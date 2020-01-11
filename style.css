@@ -8,7 +8,6 @@ p{
     font-size: 20px;
     font-weight: lighter;
     color: white;
-    
 }
 
 label {
@@ -20,7 +19,6 @@ label {
     font-weight: bold;
     background-color: rgb(255, 217, 1);
     font: black;
-    
 }
 
 .navbar-brand {
@@ -30,7 +28,6 @@ label {
 .card {
     margin-top: 30px;
     background-color: rgb(126, 123, 123, 0.75) !important;
-    
 }
 
 .form-group {
@@ -80,10 +77,10 @@ img {
 }
 
 #forecast {
-font-size: 15px;
-margin-right: 10px;
-margin-top: 15px !important;
-margin-bottom: 15px !important;
+    font-size: 15px;
+    margin-right: 10px;
+    margin-top: 15px !important;
+    margin-bottom: 15px !important;
 }
 
 .forecastData {

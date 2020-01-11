@@ -20,7 +20,7 @@ function createMap() {
         layers: L.mapquest.tileLayer('map'),
         zoom: 12
     });
-    
+
     L.mapquest.geocoding().geocode(startLocation);
     L.mapquest.directions().route({
         start: startLocation,
@@ -169,7 +169,7 @@ function generateForecast() {
 }
 
 $("#submitButton").on("click", function () {
-    $("#form1").valid();
+
     startLocation = $("#startAddress").val();
     endLocation = $("#endAddress").val();
     numOfRestaurants = $("#numRestaurants").val();
